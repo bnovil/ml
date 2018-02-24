@@ -3,6 +3,7 @@ import numpy as np
 
 """一个简单的神经网络"""
 
+
 def add_layer(inputs, in_size, out_size, activation_function=None):
     """Weights 矩阵"""
     Weights = tf.Variable(tf.random_normal([in_size, out_size]))
@@ -30,6 +31,7 @@ prediction = add_layer(l1, 10, 1, activation_function=None)
 loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction), reduction_indices=[1]))
 
 train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
+# train_step = tf.train.RMSPropOptimizer(0.1).minimize(loss)
 
 init = tf.global_variables_initializer()
 sess = tf.Session()
