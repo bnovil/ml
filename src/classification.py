@@ -22,10 +22,10 @@ def compute_accuracy(v_xs, v_ys):
     result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys})
     return result
 
-"""导入数据, 从 MNIST_data 目录
+"""导入数据, 从 MNIST-data 目录
    会自动下载MNIST数据，如果下载失败，手动下载，input_data.read_data_sets()
 """
-mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
+mnist = input_data.read_data_sets('MNIST-data', one_hot=True)
 
 xs = tf.placeholder(tf.float32, [None, 784])  # 28x28
 ys = tf.placeholder(tf.float32, [None, 10])
